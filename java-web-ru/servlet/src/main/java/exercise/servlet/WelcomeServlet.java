@@ -14,6 +14,8 @@ public class WelcoveServlet extends HttpServlet {
                       HttpServletResponse response)
         throws IOException, ServletException {
 
+        PrintWriter out = response.getWriter();
+        out.println("Hello, World!");
     }
 }
 // END
