@@ -8,14 +8,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 // BEGIN
-public class WelcoveServlet extends HttpServlet {
+public class WelcomeServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response)
         throws IOException, ServletException {
 
         PrintWriter out = response.getWriter();
-        out.println("Hello, World!");
+        out.println("Hello, Hexlet!");
     }
 }
 // END
