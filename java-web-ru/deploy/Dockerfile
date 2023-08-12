@@ -2,7 +2,7 @@ FROM gradle:8.2.0-jdk17
 
 WORKDIR /deploy
 
-COPY ./ .
+COPY ./src .
 
 RUN gradle installDist
 
