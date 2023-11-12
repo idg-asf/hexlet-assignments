@@ -14,25 +14,9 @@ public final class App {
         var app = Javalin.create(config -> {
             config.plugins.enableDevLogging();
         });
-
-        List<String> phones = Data.getPhones();
-        List<String> domains = Data.getDomains();
-
-        ObjectMapper objectMapper = new ObjectMapper();
-        String phonesJson = "";
-        String domainsJson = "";
-        try {
-            phonesJson = objectMapper.writeValueAsString(phones);
-            domainsJson = objectMapper.writeValueAsString(domains);
-
-        } catch (JsonProcessingException e) {
-            System.out.println(e.getMessage());
-        }
-
-        String finalPhonesJson = phonesJson;
-        app.get("/phones", ctx -> ctx.json(finalPhonesJson));
-        String finalDomainsJson = domainsJson;
-        app.get("/domains", ctx -> ctx.json(finalDomainsJson));
+        
+        app.get("/phones", ctx -> ctx.json(Data.getPhones()));
+        app.get("/domains", ctx -> ctx.json(Data.getDomains()));
 
         return app;
         // END
